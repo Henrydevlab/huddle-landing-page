@@ -42,7 +42,7 @@ body {
   line-height: 1.5;
   color: var(--color-white);
   background-color: var(--color-purple-700);
-  background-image: url('../images/bg-mobile.svg');
+  background-image: url('./images/bg-mobile.svg');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: contain;
@@ -51,7 +51,7 @@ body {
 
 @media (min-width: 53.125rem) { /* Breakpoint threshold at 850px */
   body {
-    background-image: url('../images/bg-desktop.svg');
+    background-image: url('./images/bg-desktop.svg');
     background-position: left top;
     background-size: cover;
   }
