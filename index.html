@@ -4,57 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Frontend Mentor | Huddle landing page with single introductory section</title>
-  <meta name="title" content="Frontend Mentor | Huddle landing page with single introductory section">
-  <meta name="description" content="Huddle re-imagines the way we build communities. Build connections with your fans through genuine discussion.">
-  <meta name="author" content="Your Name Here">
+  <title>Frontend Mentor | Huddle Landing Page with Single Introductory Section</title>
+  <meta name="description" content="Huddle re-imagines the way we build communities. Create connections with your users as you engage in genuine discussion.">
+  <meta name="author" content="@henrydevlab">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.yourdomain.com/">
-  <meta property="og:title" content="Frontend Mentor | Huddle landing page">
-  <meta property="og:description" content="Huddle re-imagines the way we build communities. Build connections with your fans through genuine discussion.">
+  <meta property="og:title" content="Frontend Mentor | Huddle Landing Page">
+  <meta property="og:description" content="Huddle re-imagines the way we build communities. Create connections with your users as you engage in genuine discussion.">
   <meta property="og:image" content="./images/desktop-design.jpg">
 
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.yourdomain.com/">
-  <meta property="twitter:title" content="Frontend Mentor | Huddle landing page">
-  <meta property="twitter:description" content="Huddle re-imagines the way we build communities. Build connections with your fans through genuine discussion.">
+  <meta property="twitter:title" content="Frontend Mentor | Huddle Landing Page">
+  <meta property="twitter:description" content="Huddle re-imagines the way we build communities. Create connections with your users as you engage in genuine discussion.">
   <meta property="twitter:image" content="./images/desktop-design.jpg">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,400&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <div class="page-wrapper">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="page-container">
     
     <header class="header">
       <div class="header__container">
-        <img src="./images/logo.svg" alt="Huddle Logo" class="header__logo">
+        <a href="#" class="header__logo-link" aria-label="Huddle Home">
+          <img src="./images/logo.svg" alt="Huddle Logo" class="header__logo">
+        </a>
       </div>
     </header>
 
-    <main class="hero">
-      <div class="hero__container">
+    <main id="main-content" class="main-layout">
+      <div class="main-layout__container">
         
-        <div class="hero__visual">
-          <img src="./images/illustration-mockups.svg" alt="Desktop and mobile mockups of the Huddle interface" class="hero__image">
+        <div class="main-layout__visual">
+          <img src="./images/illustration-mockups.svg" alt="Mockups displaying desktop and mobile user interfaces of the Huddle dashboard platform" class="main-layout__hero-img">
         </div>
 
-        <div class="hero__content">
-          <h1 class="hero__title">Build The Community Your Fans Will Love</h1>
-          <p class="hero__text">
+        <div class="main-layout__content">
+          <h1 class="main-layout__title">Build The Community Your Fans Will Love</h1>
+          <p class="main-layout__description">
             Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
             Create connections with your users as you engage in genuine discussion.
           </p>
-          <button class="hero__button btn" type="button">Register</button>
+          <a href="#" class="button button--primary">Register</a>
         </div>
 
       </div>
@@ -63,27 +64,29 @@
     <footer class="footer">
       <div class="footer__container">
         
-        <ul class="footer__socials" aria-label="Social media links">
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link" aria-label="Follow us on Facebook">
-              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link" aria-label="Follow us on Twitter">
-              <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li class="footer__social-item">
-            <a href="#" class="footer__social-link" aria-label="Follow us on Instagram">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
+        <nav class="footer__socials" aria-label="Social media directory links">
+          <ul class="social-list">
+            <li class="social-list__item">
+              <a href="#" class="social-list__link" aria-label="Follow Huddle on Facebook">
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="#" class="social-list__link" aria-label="Follow Huddle on Twitter">
+                <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="social-list__item">
+              <a href="#" class="social-list__link" aria-label="Follow Huddle on Instagram">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
         <p class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
-          Coded by <a href="#">Your Name Here</a>.
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
+          Coded by <a href="https://github.com/henrydevlab" target="_blank" rel="noopener noreferrer">@henrydevlab</a>.
         </p>
 
       </div>
