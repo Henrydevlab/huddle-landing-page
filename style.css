@@ -1,0 +1,336 @@
+/* ==========================================================================
+   1.  Design System Configurations
+   ========================================================================== */
+:root {
+  /* Color Palette Tokens */
+  --color-purple-700: hsl(257, 40%, 49%);
+  --color-magenta-400: hsl(300, 69%, 71%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-neutral-dark: hsl(257, 40%, 10%);
+
+  /* Font Configurations */
+  --font-headings: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Responsive Typography Weights & Sizes */
+  --fs-body: 1rem;
+  --fs-title-mov: 1.5rem;    /* 24px */
+  --fs-title-desk: 2.5rem;   /* 40px */
+  --fs-desc-mov: 1rem;       /* 16px */
+  --fs-desc-desk: 1.125rem;  /* 18px */
+
+  /* Global Layout Variables */
+  --max-width-container: 80rem; /* 1280px Maximum grid bounds */
+  --box-shadow-ui: 0px 8px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* ==========================================================================
+   2. Reset Framework Rules
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+  background-color: var(--color-purple-700);
+  background-image: url('../images/bg-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  min-height: 100vh;
+}
+
+@media (min-width: 53.125rem) { /* Breakpoint threshold at 850px */
+  body {
+    background-image: url('../images/bg-desktop.svg');
+    background-position: left top;
+    background-size: cover;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Screen Reader Skip-To Utility Link */
+.skip-link {
+  position: absolute;
+  top: -10rem;
+  left: 1rem;
+  background: var(--color-magenta-400);
+  color: var(--color-purple-700);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+*:focus-visible {
+  outline: 0.1875rem dashed var(--color-magenta-400);
+  outline-offset: 0.25rem;
+}
+
+/* ==========================================================================
+   3. Page Canvas Structural Shell Container
+   ========================================================================== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2.5rem 2.25rem 2rem;
+}
+
+@media (min-width: 53.125rem) {
+  .page-container {
+    padding: 3.5rem 5rem 3rem;
+  }
+}
+
+/* ==========================================================================
+   4. Header Component Alignment
+   ========================================================================== */
+.header {
+  margin-block-end: 3.125rem;
+}
+
+.header__container {
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+}
+
+.header__logo {
+  width: 7.5rem; /* ~120px mobile design map */
+  height: auto;
+}
+
+@media (min-width: 53.125rem) {
+  .header {
+    margin-block-end: 4rem;
+  }
+  
+  .header__logo {
+    width: 12.5rem; /* ~200px desktop design scale mapping */
+  }
+}
+
+/* ==========================================================================
+   5. Main Grid Block Component Layout Splits
+   ========================================================================== */
+.main-layout {
+  flex-grow: 1;
+  margin-block-end: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.main-layout__container {
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 53.125rem) {
+  .main-layout__container {
+    grid-template-columns: 1.32fr 1fr;
+    gap: 3.75rem;
+  }
+}
+
+.main-layout__visual {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-layout__hero-img {
+  width: 100%;
+  height: auto;
+}
+
+.main-layout__content {
+  text-align: center;
+}
+
+@media (min-width: 53.125rem) {
+  .main-layout__content {
+    text-align: left;
+    padding-inline-start: 1.5rem;
+  }
+}
+
+.main-layout__title {
+  font-family: var(--font-headings);
+  font-size: var(--fs-title-mov);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-block-end: 1rem;
+}
+
+@media (min-width: 53.125rem) {
+  .main-layout__title {
+    font-size: var(--fs-title-desk);
+    line-height: 1.4;
+    margin-block-end: 1.5rem;
+  }
+}
+
+.main-layout__description {
+  font-family: var(--font-body);
+  font-size: var(--fs-desc-mov);
+  line-height: 1.6;
+  opacity: 0.88;
+  margin-block-end: 1.75rem;
+}
+
+@media (min-width: 53.125rem) {
+  .main-layout__description {
+    font-size: var(--fs-desc-desk);
+    margin-block-end: 1.875rem;
+  }
+}
+
+/* ==========================================================================
+   6. UI Interface Interactions UI Element Components
+   ========================================================================== */
+.button {
+  display: inline-block;
+  font-family: var(--font-headings);
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 0.75rem 4.5rem;
+  border-radius: 6.25rem;
+  box-shadow: var(--box-shadow-ui);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+@media (min-width: 53.125rem) {
+  .button {
+    font-size: 1.125rem;
+    padding: 1rem 4.75rem;
+  }
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button--primary {
+  background-color: var(--color-white);
+  color: var(--color-purple-700);
+}
+
+/* Registration Hover & Focus Active State Settings */
+.button--primary:hover {
+  background-color: var(--color-magenta-400);
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   7. Footer Navigation Layout Components
+   ========================================================================== */
+.footer {
+  margin-block-start: auto;
+}
+
+.footer__container {
+  max-width: var(--max-width-container);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 53.125rem) {
+  .footer__container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.social-list {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 0.0625rem solid var(--color-white);
+  border-radius: 50%;
+  font-size: 0.875rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+@media (min-width: 53.125rem) {
+  .social-list__link {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Social Media Interactive Hover & Focus States Setup */
+.social-list__link:hover {
+  color: var(--color-magenta-400);
+  border-color: var(--color-magenta-400);
+}
+
+/* ==========================================================================
+   8. Small Footnote Attribution Text Setup
+   ========================================================================== */
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  opacity: 0.55;
+}
+
+.attribution a {
+  color: var(--color-magenta-400);
+  font-weight: 600;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 53.125rem) {
+  .attribution {
+    text-align: left;
+  }
+}
